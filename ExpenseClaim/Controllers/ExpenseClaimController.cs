@@ -19,7 +19,7 @@ namespace ExpenseClaimApplication.ExpenseClaim.Controllers
         {
             _expenseClaimService = expenseClaimService ?? throw new ArgumentNullException(nameof(expenseClaimService));
         }
-      
+
 
 
         // POST api/<ExpenseClaimController>
@@ -30,6 +30,6 @@ namespace ExpenseClaimApplication.ExpenseClaim.Controllers
             return Ok(result);
         }
 
-       
+
     }
 }
