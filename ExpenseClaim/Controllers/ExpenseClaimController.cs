@@ -3,6 +3,7 @@ using ExpenseClaimApplication.ExpenseClaim.Models;
 using ExpenseClaimApplication.Model;
 using ExpenseClaimApplication.Utilities.Interfaces;
 using ExpenseClaimApplication.Utilities.XmlService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection;
 
@@ -10,7 +11,7 @@ using System.Reflection;
 
 namespace ExpenseClaimApplication.ExpenseClaim.Controllers
 {
-    [Route("api/ExpenseClaim")]
+
     [ApiController]
     public class ExpenseClaimController : ControllerBase
     {
@@ -19,14 +20,12 @@ namespace ExpenseClaimApplication.ExpenseClaim.Controllers
         {
             _expenseClaimService = expenseClaimService ?? throw new ArgumentNullException(nameof(expenseClaimService));
         }
-        // POST api/<ExpenseClaimController>
+        [Route("api/ExpenseClaim")]
         [HttpPost]
-        public ActionResult Post([FromBody] ExpenseClaimRequest expenseClaimRequest)
+        public ActionResult ExpenseClaim([FromBody] ExpenseClaimRequest expenseClaimRequest)
         {
             var result = _expenseClaimService.ExpenseClaim(expenseClaimRequest.Text);
             return Ok(result);
         }
-
-
     }
 }
