@@ -10,7 +10,7 @@ using System.Reflection;
 
 namespace ExpenseClaimApplication.ExpenseClaim.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/ExpenseClaim")]
     [ApiController]
     public class ExpenseClaimController : ControllerBase
     {
